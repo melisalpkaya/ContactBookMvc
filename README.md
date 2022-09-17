@@ -33,7 +33,39 @@ Homepage (after member deleted)
 
 ![image](https://user-images.githubusercontent.com/74821649/190853365-96718c51-e769-4fd4-a057-b9e7f58b71b7.png)
 
+Members & Contacts Page
 
+![image](https://user-images.githubusercontent.com/74821649/190853388-746d63fe-96c2-4fb8-851f-f34a53554e4a.png)
+
+Admin Navigation Bar
+![image](https://user-images.githubusercontent.com/74821649/190853403-a72ba2f9-3dcb-482f-b00b-55acf6bc331a.png)
+
+User Navigation Bar
+![image](https://user-images.githubusercontent.com/74821649/190853412-723da632-0ff5-492c-935c-ae1360d4ba2a.png)
+
+User Homepage
+
+![image](https://user-images.githubusercontent.com/74821649/190853420-a82d8f97-5450-451f-8d42-fc997fc629fe.png)
+
+Contact’s Detail Page 
+
+![image](https://user-images.githubusercontent.com/74821649/190853426-0869c77f-e41b-49e0-b5ff-d008f4bdf45c.png)
+
+Contact Update Page 
+
+![image](https://user-images.githubusercontent.com/74821649/190853430-e5c3dfa2-07f8-4ffa-87a9-5a576f6f9201.png)
+
+Add Contact Page
+
+![image](https://user-images.githubusercontent.com/74821649/190853434-872bf3e2-e912-4521-bfd4-9aac040e1b8b.png)
+
+Homepage (after contact deleted)
+
+![image](https://user-images.githubusercontent.com/74821649/190853441-b6cb172f-5b7f-4ca5-a5a4-d617116adce8.png)
+
+Homepage (after entering a new contact)
+
+![image](https://user-images.githubusercontent.com/74821649/190853444-ff73da79-cccd-41b1-ac08-dcfb2892da20.png)
 
 
 
