@@ -1,0 +1,49 @@
+﻿@model MvcRehber2.Models.KisiModel.KisiDetayViewModel
+
+@{
+	ViewBag.Title = "Detay";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="~/css/detay.css">
+</head>
+
+
+<body>
+    <div class="container-detay">
+        <div class="avatar-flip">
+          <img src="https://kstu.edu.tr/kstu-file/uploads/default-user-image.png" height="150" width="150">
+        </div>
+
+         <h2>@Model.Kisi.Ad @Model.Kisi.Soyad</h2>
+
+      <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(x=>x.Kisi.EvTelefon)</dt>
+        <dd>@Model.Kisi.EvTelefon</dd>
+    
+        <dt>@Html.DisplayNameFor(x=>x.Kisi.CepTelefon)</dt>
+        <dd>@Model.Kisi.CepTelefon</dd>
+    
+        <dt>@Html.DisplayNameFor(x=>x.Kisi.IsTelefon)</dt>
+        <dd>@Model.Kisi.IsTelefon</dd>
+    
+        <dt>@Html.DisplayNameFor(x=>x.Kisi.Adres)</dt>
+        <dd>@Model.Kisi.Adres</dd>
+    
+        <dt>@Html.DisplayNameFor(x=>x.Kisi.SehirId)</dt>
+        <dd>@Model.Kisi.Sehir.SehirAdi</dd>
+       </dl> 
+       
+      </div>
+
+     
+    
+</body>
+</html>

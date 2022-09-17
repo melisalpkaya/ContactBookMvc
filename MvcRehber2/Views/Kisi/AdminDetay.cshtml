@@ -1,0 +1,45 @@
+﻿@model MvcRehber2.Models.KisiModel.AdminDetayViewModel
+
+@{
+	ViewBag.Title = "AdminDetay";
+	Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="~/css/detay.css">
+</head>
+
+
+<body>
+    <div class="container-detay">
+        <div class="avatar-flip">
+          <img src="~/images/user.png" height="150" width="150">
+        </div>
+
+         <h2>@Model.Giris.UyeAdi @Model.Giris.UyeSoyadi</h2>
+
+      <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(x=>x.Giris.MailAdresi)</dt>
+        <dd>@Model.Giris.MailAdresi</dd>
+    
+        <dt>@Html.DisplayNameFor(x=>x.Giris.UyeTelefonNo)</dt>
+        <dd>@Model.Giris.UyeTelefonNo</dd>
+    
+        <dt>@Html.DisplayNameFor(x=>x.Giris.Sifre)</dt>
+        <dd>@Model.Giris.Sifre</dd>
+    
+     
+       </dl> 
+       
+      </div>
+
+     
+    
+</body>
+</html>

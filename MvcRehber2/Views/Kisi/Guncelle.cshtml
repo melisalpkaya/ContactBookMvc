@@ -1,0 +1,79 @@
+﻿@model MvcRehber2.Models.KisiModel.KisiGuncelleViewModel
+
+@{
+	ViewBag.Title="Guncelle";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" type="text/css" href="~/css/form.css">
+<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./fonts/font-awesome/font-awesome.min.css">
+<!--===============================================================================================-->
+
+<div class="contact1">
+		<div class="container-contact1"><h2> Kişi Güncelle</h2><br />
+@*<form class="form-horizontal" method="post" action="/Kisi/Guncelle/">*@
+   @using (Html.BeginForm("Guncelle","Kisi",FormMethod.Post, new{@class="form-horizontal contact1-form validate-form"}))
+   {
+
+
+
+    @Html.HiddenFor(x=>x.Kisi.Id)
+
+    <div class="form-group">
+     
+        @Html.LabelFor(x=>x.Kisi.Ad)
+       
+       @Html.TextBoxFor(x=>x.Kisi.Ad,null,new {@class = "form-control"  })
+
+    </div>
+    <div class="form-group">
+       
+         @Html.LabelFor(x=>x.Kisi.Soyad)
+     
+       @Html.TextBoxFor(x=>x.Kisi.Soyad, null,new {@class = "form-control"  })
+    </div>
+    <div class="form-group">
+       
+        @Html.LabelFor(x=>x.Kisi.EvTelefon)
+      
+        @Html.TextBoxFor(x=>x.Kisi.EvTelefon, null,new {@class = "form-control"  })
+       
+    </div>
+    <div class="form-group">
+        @*<label>Cep Telefonu</label>
+        <input type="text" id="third-phone" class="form-control" name="CepTelefon" placeholder="(999)-999-9999"/>*@
+     
+        @Html.LabelFor(x=>x.Kisi.CepTelefon)
+         @Html.TextBoxFor(x=>x.Kisi.CepTelefon, null,new {@class = "form-control"  })
+    </div>
+    <div class="form-group">
+      
+        @Html.LabelFor(x=>x.Kisi.IsTelefon)
+         @Html.TextBoxFor(x=>x.Kisi.IsTelefon, null,new {@class = "form-control"  })
+    </div>
+    <div class="form-group">
+       
+        @Html.LabelFor(x=>x.Kisi.EmailAdres)
+         @Html.TextBoxFor(x=>x.Kisi.EmailAdres, null,new {@class = "form-control"  })
+    </div>
+    <div class="form-group">
+       
+        @Html.LabelFor(x=>x.Kisi.Adres)
+         @Html.TextBoxFor(x=>x.Kisi.Adres, null,new {@class = "form-control"  })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x=>x.Kisi.SehirId)
+   
+      
+     @* @Html.DropDownListFor(x => x.Kisi.SehirId, ViewBag.Sehirler as SelectList, new { @class = "form-control"})*@
+      @Html.DropDownListFor(x => x.Kisi.SehirId, new SelectList(Model.Sehirler, "Id","SehirAdi"), new { @class = "form-control"})
+    </div>
+
+   
+
+    <input type="submit" class="btn btn-primary" value="Güncelle" />
+@*</form>*@
+   }
+   	</div>
+	</div>

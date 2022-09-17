@@ -1,0 +1,116 @@
+﻿@{
+	ViewBag.Title = "Ekle";
+	Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Rehberim</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="~/images/icons/favicon.ico" />
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/vendor/bootstrapgiris/css/bootstrap.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/vendor/animategiris/animategiris.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/vendor/css-hamburgers/hamburgers.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/vendor/animsitiongiris/css/animsition.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/vendor/select2-giris/select2.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/vendor/daterangepicker/daterangepicker.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/css/maingiris.css">
+	<link rel="stylesheet" type="text/css" href="~/css/utilgiris.css">
+	<!--===============================================================================================-->
+
+</head>
+<body style="background-color:#ebeeef;">
+
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-form-title" style="background-image: url(../images/aa.jpg);">
+					<span class="login100-form-title-1">
+						Rehberim
+					</span>
+				</div>
+
+
+				@using (Html.BeginForm("Kayit", "Kisi", FormMethod.Post, new { @class = "login100-form validate-form" }))
+				{
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Ad gereklidir">
+						<span class="label-input100">Ad</span>
+						<input class="input100" type="text" name="UyeAdi" placeholder="Adınızı giriniz">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-18" data-validate="Şifre gereklidir">
+						<span class="label-input100">Soyad</span>
+						<input class="input100" type="text" name="UyeSoyadi" placeholder="Soyadınızı giriniz">
+						<span class="focus-input100"></span>
+					</div>
+					<div class="wrap-input100 validate-input m-b-26" data-validate="E-posta gereklidir">
+						<span class="label-input100">E-Posta</span>
+						<input class="input100" type="text" name="MailAdresi" placeholder="E-posta adresinizi giriniz">
+						<span class="focus-input100"></span>
+					</div>
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Telefon numarası gereklidir">
+						<span class="label-input100">Telefon No</span>
+						<input class="input100" type="text" name="UyeTelefonNo" placeholder="Telefon numaranızı giriniz">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-18" data-validate="Şifre gereklidir">
+						<span class="label-input100">Şifre</span>
+						<input class="input100" type="password" name="Sifre" placeholder="Şifrenizi giriniz">
+						<span class="focus-input100"></span>
+					</div>
+
+
+
+					<div class="container-login100-form-btn">
+						<button type="submit" class="login100-form-btn">
+							Kayıt Ol
+						</button><br /> @Html.ActionLink("Hesabınız var mı?", "Giris","Kisi")
+
+					</div>
+
+
+
+
+
+				}
+			</div>
+		</div>
+	</div>
+
+
+	<!--===============================================================================================-->
+	<script src="~/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="~/vendor/animsitiongiris/js/animsition.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="~/vendor/bootstrapgiris/js/popper.js"></script>
+	<script src="~/vendor/bootstrapgiris/js/bootstrap.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="~/vendor/select2-giris/select2.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="~/vendor/daterangepicker/moment.min.js"></script>
+	<script src="~/vendor/daterangepicker/daterangepicker.js"></script>
+	<!--===============================================================================================-->
+	<script src="~/vendor/countdowntime/countdowntime.js"></script>
+	<!--===============================================================================================-->
+	<script src="~/js/maingiris.js"></script>
+
+
+</body>
+</html>

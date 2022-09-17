@@ -1,0 +1,112 @@
+﻿@model MvcRehber2.Models.KisiModel.KisiIndexViewModel
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="~/vendor/bootstrap/css/bootstrap.min.css">
+
+<link rel="stylesheet" type="text/css" href="~/fonts/font-awesome/font-awesome.min.css">
+
+<link rel="stylesheet" type="text/css" href="~/vendor/animate/animate.css">
+
+<link rel="stylesheet" type="text/css" href="~/vendor/select2/select2.min.css">
+
+<link rel="stylesheet" type="text/css" href="~/vendor/perfect-scrollbar/perfect-scrollbar.css">
+
+<link rel="stylesheet" type="text/css" href="~/css/util.css">
+<link rel="stylesheet" type="text/css" href="~/css/main.css">
+<link rel="stylesheet" type="text/css" href="~/css/Navbar.css">
+<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+<meta name="robots" content="noindex, follow">
+<script nonce="b3e344e2-8457-4c7f-a649-67f0f7078586">(function(w, d) { !function(a, e, t, r) { a.zarazData = a.zarazData || {}; a.zarazData.executed = []; a.zaraz = { deferred: [] }; a.zaraz.q = []; a.zaraz._f = function(e) { return function() { var t = Array.prototype.slice.call(arguments); a.zaraz.q.push({ m: e, a: t }) } }; for (const e of ["track", "set", "ecommerce", "debug"]) a.zaraz[e] = a.zaraz._f(e); a.zaraz.init = () => { var t = e.getElementsByTagName(r)[0], z = e.createElement(r), n = e.getElementsByTagName("title")[0]; n && (a.zarazData.t = e.getElementsByTagName("title")[0].text); a.zarazData.x = Math.random(); a.zarazData.w = a.screen.width; a.zarazData.h = a.screen.height; a.zarazData.j = a.innerHeight; a.zarazData.e = a.innerWidth; a.zarazData.l = a.location.href; a.zarazData.r = e.referrer; a.zarazData.k = a.screen.colorDepth; a.zarazData.n = e.characterSet; a.zarazData.o = (new Date).getTimezoneOffset(); a.zarazData.q = []; for (; a.zaraz.q.length;) { const e = a.zaraz.q.shift(); a.zarazData.q.push(e) } z.defer = !0; for (const e of [localStorage, sessionStorage]) Object.keys(e || {}).filter((a => a.startsWith("_zaraz_"))).forEach((t => { try { a.zarazData["z_" + t.slice(7)] = JSON.parse(e.getItem(t)) } catch { a.zarazData["z_" + t.slice(7)] = e.getItem(t) } })); z.referrerPolicy = "origin"; z.src = "/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(a.zarazData))); t.parentNode.insertBefore(z, t) };["complete", "interactive"].includes(e.readyState) ? zaraz.init() : a.addEventListener("DOMContentLoaded", zaraz.init) }(w, d, 0, "script"); })(window, document);</script>
+
+<body>
+	@*<button class="btn btn-info" onclick="location.href='@Url.Action("Ekle", "Kisi")'">Ekle</button>&nbsp;&nbsp;*@
+
+
+	<div class="container-table300">
+		<div class="wrap-table100">
+
+			<div class="table100 ver1 m-t-50 m-b-110">
+				<div class="table100-head">
+					<table>
+						<thead>
+							<tr class="row100 head">
+								<th class="cell100 column1">Ad</th>
+								<th class="cell100 column2">Soyad</th>
+								<th class="cell100 column3">Cep Telefonu</th>
+								<th class="cell100 column4">Email Adres</th>
+								<th class="cell100 column6">Sehir</th>
+								<th class="cell100 column7">Islemler</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+				<div class="table100-body js-pscroll">
+					<table>
+						<tbody>
+
+
+
+							@foreach (var kisi in Model.Kisiler)
+							{
+
+								<tr class="row100 body">
+									<td class="cell100 column1">@kisi.Ad</td>
+									<td class="cell100 column2">@kisi.Soyad</td>
+									<td class="cell100 column3">@kisi.CepTelefon</td>
+									<td class="cell100 column4">@kisi.EmailAdres</td>
+									<td class="cell100 column6">@kisi.Sehir.SehirAdi</td>
+									<td class="cell100 column7">
+										&nbsp;<button class="btn btn-info" onclick="location.href='@Url.Action("Detay", "Kisi", new {id=kisi.Id })'">Detay</button>&nbsp;&nbsp;
+										<button class="btn btn-success" onclick="location.href='@Url.Action("Guncelle", "Kisi", new {id=kisi.Id })'">Güncelle</button>
+										&nbsp;&nbsp;
+										<button class="btn btn-danger" onclick="location.href='@Url.Action("Sil", "Kisi", new {id=kisi.Id })'">Sil</button>
+									</td>
+								</tr>
+
+
+
+
+							}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+	<script src="vendor/select2/select2.min.js"></script>
+
+	<script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+	<script>
+		$('.js-pscroll').each(function() {
+			var ps = new PerfectScrollbar(this);
+
+			$(window).on('resize', function() {
+				ps.update();
+			})
+		});
+
+
+	</script>
+
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'UA-23581568-13');
+	</script>
+
+	<script src="js/main.js"></script>
+	<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"73c0b2830bcd515a","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2022.8.0","si":100}' crossorigin="anonymous"></script>
+</body>

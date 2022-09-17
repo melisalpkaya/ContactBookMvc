@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rehberim</title>
+    	
+   
+</head>
+<body>
+
+
+    
+
+    <div class="container">
+        <main role="main" class="pb-3">
+             @if (TempData["BasariliMesaj"] != null)
+            {
+                <div class="alert alert-success">
+                   @TempData["BasariliMesaj"]
+                </div>
+                
+            }
+             @if (TempData["HataliMesaj"] != null)
+            {
+                <div class="alert alert-danger">
+                   @TempData["HataliMesaj"]
+                </div>
+                
+            }
+            @RenderBody()
+        </main>
+    </div>
+
+  
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

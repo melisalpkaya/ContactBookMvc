@@ -1,0 +1,100 @@
+﻿@model MvcRehber2.Models.KisiModel.KisiEkleViewModel
+@using MvcRehber2.Models.Entities
+
+@{
+    ViewBag.Title = "Ekle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Hellooo</h2>
+ @using (Html.BeginForm("Ekle","Kisi",FormMethod.Post, new{@class="form-horizontal contact1-form validate-form"}))
+   {
+
+    var uyeid = Model.GirisBilgileri.UyeId;
+    var uyeidstring = uyeid.ToString();
+
+   
+       @Html.TextBoxFor(x=>x.Kisi.UyeId, uyeidstring, new {@class = "form-control" , @readonly = "readonly"} )
+    
+
+   
+    @*<div class="form-group">
+      @Html.DropDownListFor(x => x.Kisi.UyeId, new SelectList(Model.GirisBilgileri,"UyeId","UyeId"),new { @class = "form-control"})
+    
+    </div>*@
+
+
+    <div class="form-group">
+        @*<label>Ad</label>*@
+        @*@Html.Label("Ad")*@
+        @Html.LabelFor(x=>x.Kisi.Ad)
+       @* <input type="text" class="form-control" name="Ad"/>*@
+       @*@Html.TextBox("Ad",null,new {@class = "form-control"  })*@
+       @Html.TextBoxFor(x=>x.Kisi.Ad,null,new {@class = "form-control"  })
+    </div>
+    <div class="form-group">
+        @*<label>Soyad</label>*@
+        @*@Html.Label("Soyad")*@
+         @Html.LabelFor(x=>x.Kisi.Soyad)
+       @* <input type="text" class="form-control" name="Soyad"/>*@
+       @*@Html.TextBox("Soyad",null, new{ @class = "form-control" })*@
+       @Html.TextBoxFor(x=>x.Kisi.Soyad, null,new {@class = "form-control"  })
+    </div>
+    <div class="form-group">
+        @*<label>Ev Telefonu</label>*@
+        @*@Html.Label("Ev Telefonu") *@
+        @Html.LabelFor(x=>x.Kisi.EvTelefon)
+        @*@Html.TextBox("EvTelefon",null, new{ @class = "form-control" })*@
+       @* <input type="text" class="form-control" name="EvTelefon"/>*@
+        @Html.TextBoxFor(x=>x.Kisi.EvTelefon, null,new {@class = "form-control"  })
+       
+    </div>
+    <div class="form-group">
+        @*<label>Cep Telefonu</label>
+        <input type="text" id="third-phone" class="form-control" name="CepTelefon" placeholder="(999)-999-9999"/>*@
+        @*@Html.Label("Cep Telefonu") 
+        @Html.TextBox("CepTelefon",null, new{ @class = "form-control" })*@
+        @Html.LabelFor(x=>x.Kisi.CepTelefon)
+         @Html.TextBoxFor(x=>x.Kisi.CepTelefon, null,new {@class = "form-control"  })
+    </div>
+    <div class="form-group">
+       @* <label>İş Telefonu</label>
+        <input type="text" class="form-control" name="IsTelefon"/>*@
+       @* @Html.Label("İş Telefonu") 
+        @Html.TextBox("IsTelefon",null, new{ @class = "form-control" })*@
+        @Html.LabelFor(x=>x.Kisi.IsTelefon)
+         @Html.TextBoxFor(x=>x.Kisi.IsTelefon, null,new {@class = "form-control"  })
+    </div>
+    <div class="form-group">
+       @* <label>Email Adresi</label>
+        <input type="text" class="form-control" name="EmailAdres"/>*@
+       @* @Html.Label("Email Adresi") 
+        @Html.TextBox("EmailAdres",null, new{ @class = "form-control" })*@
+        @Html.LabelFor(x=>x.Kisi.EmailAdres)
+         @Html.TextBoxFor(x=>x.Kisi.EmailAdres, null,new {@class = "form-control"  })
+    </div>
+    <div class="form-group">
+        @*<label>Adres</label>
+        <textarea class="form-control" name="Adres" rows="4"></textarea>*@
+        @*@Html.Label("Adres") 
+        @Html.TextArea("Adres",null, new{ @class = "form-control", @rows = 4 })*@
+        @Html.LabelFor(x=>x.Kisi.Adres)
+         @Html.TextBoxFor(x=>x.Kisi.Adres, null,new {@class = "form-control"  })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x=>x.Kisi.SehirId)
+     @* <select class="form-control" name="SehirId">
+        <option value="1">İstanbul</option>
+        <option value="2">Yalova</option>
+        <option value="3">Ankara</option>
+        <option value="4">Bursa</option>
+      </select>*@ 
+      
+      @Html.DropDownListFor(x => x.Kisi.SehirId, new SelectList(Model.Sehirler,"Id","SehirAdi"),new { @class = "form-control"})
+    
+    </div>
+
+   
+
+    <input type="submit" class="btn btn-success" value="Kaydet" />
+}
